@@ -1,4 +1,5 @@
 /*! tailwindcss v4.0.14 | MIT License | https://tailwindcss.com */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Doto:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rock+Salt&family=Tektur:wght@400..900&display=swap');
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -7,12 +8,9 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(0.637 0.237 25.331);
-    --color-red-600: oklch(0.577 0.245 27.325);
+    --color-red-900: oklch(0.396 0.141 25.723);
     --color-red-950: oklch(0.258 0.092 26.042);
-    --color-amber-600: oklch(0.666 0.179 58.318);
-    --color-green-600: oklch(0.627 0.194 149.214);
     --color-green-900: oklch(0.393 0.095 152.535);
-    --color-green-950: oklch(0.266 0.065 152.934);
     --color-blue-950: oklch(0.282 0.091 267.935);
     --color-black: #000;
     --color-white: #fff;
@@ -37,6 +35,8 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
+    --font-hubert: "Big Shoulders Stencil", "sans-serif";
+    --font-hubert2: "Tektur", "sans-serif";
   }
 }
 @layer base {
@@ -351,9 +351,6 @@
   }
   .m-auto {
     margin: auto;
-  }
-  .mx-auto {
-    margin-inline: auto;
   }
   .box-border {
     box-sizing: border-box;
@@ -1063,12 +1060,6 @@
   .bg-\[\#0088cc\] {
     background-color: #0088cc;
   }
-  .bg-\[\(\)\] {
-    background-color: ();
-  }
-  .bg-\[\(url\)\] {
-    background-color: (url);
-  }
   .bg-\[color\:var\(--my-color\)\] {
     background-color: var(--my-color);
   }
@@ -1098,21 +1089,6 @@
   .bg-radial {
     --tw-gradient-position: in oklab;
     background-image: radial-gradient(var(--tw-gradient-stops));
-  }
-  .bg-\[url\(\)\] {
-    background-image: url();
-  }
-  .bg-\[url\(\.\.\/images\)\] {
-    background-image: url(../images);
-  }
-  .bg-\[url\(\.\.\/images\/\)\] {
-    background-image: url(../images/);
-  }
-  .bg-\[url\(\.\.\/images\/bg1\)\] {
-    background-image: url(../images/bg1);
-  }
-  .bg-\[url\(\.\.\/images\/bg1\.\)\] {
-    background-image: url(../images/bg1.);
   }
   .bg-\[url\(\.\.\/images\/bg1\.jpg\)\] {
     background-image: url(../images/bg1.jpg);
@@ -1271,15 +1247,6 @@
   .object-top {
     object-position: top;
   }
-  .p-4 {
-    padding: calc(var(--spacing) * 4);
-  }
-  .p-5 {
-    padding: calc(var(--spacing) * 5);
-  }
-  .p-\[400px\] {
-    padding: 400px;
-  }
   .py-\[400px\] {
     padding-block: 400px;
   }
@@ -1324,6 +1291,9 @@
   }
   .align-top {
     vertical-align: top;
+  }
+  .font-hubert {
+    font-family: var(--font-hubert);
   }
   .text-8xl {
     font-size: var(--text-8xl);
@@ -1409,9 +1379,6 @@
   }
   .\[color\:red\]\/50\! {
     color: color-mix(in oklab, red 50%, transparent) !important;
-  }
-  .text-blue-950 {
-    color: var(--color-blue-950);
   }
   .text-white {
     color: var(--color-white);
@@ -1561,12 +1528,6 @@
   .scheme-only-light {
     color-scheme: only light;
   }
-  .opacity-50 {
-    opacity: 50%;
-  }
-  .opacity-70 {
-    opacity: 70%;
-  }
   .opacity-80 {
     opacity: 80%;
   }
@@ -1704,6 +1665,26 @@
   }
   .transition-normal {
     transition-behavior: normal;
+  }
+  .duration-7 {
+    --tw-duration: 7ms;
+    transition-duration: 7ms;
+  }
+  .duration-75 {
+    --tw-duration: 75ms;
+    transition-duration: 75ms;
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
+  .duration-700 {
+    --tw-duration: 700ms;
+    transition-duration: 700ms;
+  }
+  .ease-\[cubic-bezier\(0\.95\,0\.05\,0\.795\,0\.035\)\] {
+    --tw-ease: cubic-bezier(0.95,0.05,0.795,0.035);
+    transition-timing-function: cubic-bezier(0.95,0.05,0.795,0.035);
   }
   .ease-in {
     --tw-ease: var(--ease-in);
@@ -1869,40 +1850,16 @@
       position: absolute;
     }
   }
-  .before\:top-0 {
-    &::before {
-      content: var(--tw-content);
-      top: calc(var(--spacing) * 0);
-    }
-  }
   .before\:right-0 {
     &::before {
       content: var(--tw-content);
       right: calc(var(--spacing) * 0);
     }
   }
-  .before\:bottom-0 {
-    &::before {
-      content: var(--tw-content);
-      bottom: calc(var(--spacing) * 0);
-    }
-  }
-  .before\:bottom-\[-10\%\] {
-    &::before {
-      content: var(--tw-content);
-      bottom: -10%;
-    }
-  }
   .before\:bottom-\[-20\%\] {
     &::before {
       content: var(--tw-content);
       bottom: -20%;
-    }
-  }
-  .before\:left-0 {
-    &::before {
-      content: var(--tw-content);
-      left: calc(var(--spacing) * 0);
     }
   }
   .before\:h-\[10px\] {
@@ -1923,40 +1880,16 @@
       background-color: var(--color-blue-950);
     }
   }
-  .before\:bg-green-950 {
-    &::before {
-      content: var(--tw-content);
-      background-color: var(--color-green-950);
-    }
-  }
-  .before\:bg-red-950 {
-    &::before {
-      content: var(--tw-content);
-      background-color: var(--color-red-950);
-    }
-  }
   .after\:absolute {
     &::after {
       content: var(--tw-content);
       position: absolute;
     }
   }
-  .after\:top-0 {
-    &::after {
-      content: var(--tw-content);
-      top: calc(var(--spacing) * 0);
-    }
-  }
   .after\:top-\[-10\%\] {
     &::after {
       content: var(--tw-content);
       top: -10%;
-    }
-  }
-  .after\:top-\[-10\] {
-    &::after {
-      content: var(--tw-content);
-      top: -10;
     }
   }
   .after\:left-0 {
@@ -1977,29 +1910,16 @@
       width: 100px;
     }
   }
-  .after\:bg-black {
-    &::after {
-      content: var(--tw-content);
-      background-color: var(--color-black);
-    }
-  }
   .after\:bg-red-950 {
     &::after {
       content: var(--tw-content);
       background-color: var(--color-red-950);
     }
   }
-  .hover\:text-amber-600 {
+  .hover\:font-hubert2 {
     &:hover {
       @media (hover: hover) {
-        color: var(--color-amber-600);
-      }
-    }
-  }
-  .hover\:text-green-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-green-600);
+        font-family: var(--font-hubert2);
       }
     }
   }
@@ -2010,10 +1930,17 @@
       }
     }
   }
-  .hover\:text-red-600 {
+  .hover\:text-red-900 {
     &:hover {
       @media (hover: hover) {
-        color: var(--color-red-600);
+        color: var(--color-red-900);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
       }
     }
   }
@@ -2279,6 +2206,10 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-ease {
   syntax: "*";
   inherits: false;
@@ -2296,10 +2227,6 @@
   inherits: false;
 }
 @property --tw-contain-style {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-duration {
   syntax: "*";
   inherits: false;
 }
